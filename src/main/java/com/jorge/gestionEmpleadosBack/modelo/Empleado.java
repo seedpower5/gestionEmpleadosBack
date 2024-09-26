@@ -16,18 +16,22 @@ public class Empleado
     private String apellido;
     @Column(name = "email",length = 60,nullable = false,unique = true)
     private String email;
+    @Column(name = "horasTrabajadas",length = 60,nullable = false,unique = true)
+    private float horasTrabajadas;
+
     //generamos constructor vacio
     public Empleado()
     {
 
     }
     //CONSTRUCTOR LLENO
-    public Empleado(Long id,String nombre,String apellido,String email)
+    public Empleado(Long id,String nombre,String apellido,String email,float horasTrabajadas)
     {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
+        this.horasTrabajadas= horasTrabajadas;
     }
 
     //SETTERS Y GETTERS
@@ -61,5 +65,12 @@ public class Empleado
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public float getHorasTrabajadas() {
+        return horasTrabajadas;
+    }
+    public void setHorasTrabajadas(float horasTrabajadas) {
+        this.horasTrabajadas = horasTrabajadas;
     }
 }
